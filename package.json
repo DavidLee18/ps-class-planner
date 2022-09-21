@@ -1,0 +1,23 @@
+{
+  "name": "ps-class-planner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "spago bundle-app -y -t pure.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidLee18/ps-class-planner.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DavidLee18/ps-class-planner/issues"
+  },
+  "homepage": "https://github.com/DavidLee18/ps-class-planner#readme"
+}

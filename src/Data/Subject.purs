@@ -3,13 +3,16 @@ module Data.Subject where
 import Prelude
 
 import Control.Alternative (guard)
+import Data.Argonaut (class DecodeJson, JsonDecodeError(..), decodeJson)
 import Data.Date.Component (Weekday(..))
+import Data.Either (note)
 import Data.Foldable (class Foldable, all, elem, minimum, or, sum)
 import Data.Generic.Rep (class Generic)
 import Data.List.Lazy (List, Step(..), elemIndex, length, nil, (..), (:))
 import Data.List.Lazy as List
-import Data.Maybe (Maybe)
+import Data.Maybe (Maybe(..))
 import Data.Show.Generic (genericShow)
+import Data.String.Read (class Read, read)
 import Data.Tuple.Nested (type (/\), (/\))
 
 data SubjectType = Major | SelectiveMajor | Mandatory | GE
@@ -18,6 +21,16 @@ derive instance Eq SubjectType
 derive instance Ord SubjectType
 derive instance Generic SubjectType _
 instance Show SubjectType where show = genericShow
+instance Read SubjectType where
+  read "전필" = Just Major
+  read "전선" = Just SelectiveMajor
+  read "교필" = Just Mandatory
+  read "교선" = Just GE
+  read _ = Nothing
+instance DecodeJson SubjectType where
+  decodeJson json = do
+    s <- decodeJson json
+    note (UnexpectedValue json) $ read s
 
 data Grade = Freshman | Sophomore | Junior | Senior
 
