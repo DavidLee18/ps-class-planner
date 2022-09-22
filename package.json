@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/DavidLee18/ps-class-planner#readme",
   "devDependencies": {
+    "purescript": "^0.15.4",
     "spago": "^0.20.9"
   }
 }
