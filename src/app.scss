@@ -1,8 +1,8 @@
 // @use "@material/checkbox"; // Required only for data table with row selection.
-@use "@material/icon-button"; // Required only for data table with column sorting.
-@use "@material/data-table/data-table";
+@use "../node_modules/@material/icon-button/styles.scss"; // Required only for data table with column sorting.
+@use "../node_modules/@material/data-table/styles.scss";
 
 // @include checkbox.core-styles;
-// @include icon-button.core-styles;
-// @include data-table.core-styles;
-// @include data-table.theme-baseline;
+@include icon-button.core-styles;
+@include data-table.core-styles;
+@include data-table.theme-baseline;
