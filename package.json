@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/DavidLee18/ps-class-planner/issues"
   },
-  "homepage": "https://github.com/DavidLee18/ps-class-planner#readme"
+  "homepage": "https://github.com/DavidLee18/ps-class-planner#readme",
+  "devDependencies": {
+    "spago": "^0.20.9"
+  }
 }
