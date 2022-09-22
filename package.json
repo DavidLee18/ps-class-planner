@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "build": "spago bundle-app -y -t pure.js",
+    "build": "spago bundle-app -t pure.js && webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +23,8 @@
   "devDependencies": {
     "esbuild": "^0.15.8",
     "purescript": "^0.15.4",
-    "spago": "^0.20.9"
+    "spago": "^0.20.9",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
   }
 }
